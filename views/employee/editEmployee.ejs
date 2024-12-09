@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Employee</title>
+    
+    <!-- <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.2/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <% // Daisy UI %>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.2/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script> -->
+
+    
+    <link rel="stylesheet" href="/css/output.css">
+</head>
+<body class="px-[32px] lg:px-[256px] flex justify-center items-center w-screen h-screen">
+    
+    <form class="w-full">
+      <div class="card-title flex justify-between items-center">
+        <h1 class="text-5xl text-white mb-[32px] font-bold">Edit Employee</h1>
+        <a href="/employee">
+          <button type="button" class="btn btn-primary">
+            <i class="fa-solid fa-arrow-left"></i>
+            Return
+          </button>
+        </a>
+      </div>
+    
+      <div class="flex justify-between">
+        <div class="firstname w-[49%] relative">
+          <label class="label">
+            <span class="label-text">First Name</span>
+          </label>
+          <input type="text" placeholder="firstname" class="input input-bordered w-full" required value="<%= employee.first_name %>" data-firstname/>
+        </div>
+        <div class="lasttname w-[49%] relative">
+          <label class="label">
+            <span class="label-text">Last Name</span>
+          </label>
+          <input type="text" placeholder="firstname" class="lastname input input-bordered w-full" required value="<%= employee.last_name %>" data-lastname/>
+        </div>
+      </div>
+        <div class="form-control">
+          <label class="label">
+            <span class="label-text">Birthday</span>
+          </label>
+          <div class="flex justify-between" >
+            <select class="select select-bordered w-[32%] text-neutral-content" data-birth-month data-birth_date="<%= employee.birth_date %>" data-empid="<%= employee.emp_id%>">
+                <option disabled selected>Month</option>
+                <option>January</option>
+                <option>February</option>
+                <option>March</option>
+                <option>April</option>
+                <option>May</option>
+                <option>June</option>
+                <option>July</option>
+                <option>August</option>
+                <option>September</option>
+                <option>October</option>
+                <option>November</option>
+                <option>December</option>
+              </select>
+
+              <select class="select select-bordered w-[32%] text-neutral-content" data-birth-date>
+                <option disabled selected>Day</option>
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+                <option>6</option>
+                <option>7</option>
+                <option>8</option>
+                <option>9</option>
+                <option>10</option>
+                <option>11</option>
+                <option>12</option>
+                <option>13</option>
+                <option>14</option>
+                <option>15</option>
+                <option>16</option>
+                <option>17</option>
+                <option>18</option>
+                <option>19</option>
+                <option>20</option>
+                <option>21</option>
+                <option>22</option>
+                <option>23</option>
+                <option>24</option>
+                <option>25</option>
+                <option>26</option>
+                <option>27</option>
+                <option>28</option>
+                <option>29</option>
+                <option>30</option>
+                <option>31</option>
+                
+              </select>
+              <select class="select select-bordered w-[32%]  text-neutral-contentr" data-birth-year>
+                <option disabled selected>Year</option>
+                <option>2024</option>
+                <option>2023</option>
+                <option>2022</option>
+                <option>2021</option>
+                <option>2020</option>
+                <option>2019</option>
+                <option>2018</option>
+                <option>2017</option>
+                <option>2016</option>
+                <option>2015</option>
+                <option>2014</option>
+                <option>2013</option>
+                <option>2012</option>
+                <option>2011</option>
+                <option>2010</option>
+                <option>2009</option>
+                <option>2008</option>
+                <option>2007</option>
+                <option>2006</option>
+                <option>2005</option>
+                <option>2004</option>
+                <option>2003</option>
+                <option>2002</option>
+                <option>2001</option>
+                <option>2000</option>
+                <option>1999</option>
+                <option>1998</option>
+                <option>1997</option>
+                <option>1996</option>
+                <option>1995</option>
+                <option>1994</option>
+                <option>1993</option>
+                <option>1992</option>
+                <option>1991</option>
+                <option>1990</option>
+                <option>1989</option>
+                <option>1988</option>
+                <option>1987</option>
+              </select>
+          </div>
+        </div>
+        <div class="flex justify-between">
+          <div class="Position w-[49%] relative">
+            <label class="label">
+              <span class="label-text">Position</span>
+            </label>
+            <input type="text" placeholder="Position" class="position input input-bordered w-full" required value="<%= employee.position %>" data-position/>
+          </div>
+          <div class="Salary w-[49%] relative">
+            <label class="label">
+              <span class="label-text">Salary</span>
+            </label>
+            <input type="number" placeholder="salary amount" class="salary input input-bordered w-full" required value="<%= employee.salary %>" data-salary/>
+          </div>
+        </div>
+        <div class="form-control">
+          <div class="form-control">
+            <label class="label">
+              <span class="label-text">Date Hired</span>
+            </label>
+            <div class="flex justify-between">
+              <select class="select select-bordered w-[32%]  text-neutral-content" data-hired-month data-date_hired="<%= employee.date_hired %>" >
+                  <option disabled selected>Month</option>
+                  <option>January</option>
+                  <option>February</option>
+                  <option>March</option>
+                  <option>April</option>
+                  <option>May</option>
+                  <option>June</option>
+                  <option>July</option>
+                  <option>August</option>
+                  <option>September</option>
+                  <option>October</option>
+                  <option>November</option>
+                  <option>December</option>
+                </select>
+  
+                <select class="select select-bordered w-[32%] text-neutral-content" data-hired-date>
+                  <option disabled selected>Day</option>
+                  <option>1</option>
+                  <option>2</option>
+                  <option>3</option>
+                  <option>4</option>
+                  <option>5</option>
+                  <option>6</option>
+                  <option>7</option>
+                  <option>8</option>
+                  <option>9</option>
+                  <option>10</option>
+                  <option>11</option>
+                  <option>12</option>
+                  <option>13</option>
+                  <option>14</option>
+                  <option>15</option>
+                  <option>16</option>
+                  <option>17</option>
+                  <option>18</option>
+                  <option>19</option>
+                  <option>20</option>
+                  <option>21</option>
+                  <option>22</option>
+                  <option>23</option>
+                  <option>24</option>
+                  <option>25</option>
+                  <option>26</option>
+                  <option>27</option>
+                  <option>28</option>
+                  <option>29</option>
+                  <option>30</option>
+                  <option>31</option>
+                  
+                </select>
+                <select class="select select-bordered w-[32%] text-neutral-content" data-hired-year>
+                  <option disabled selected>Year</option>
+                  <option>2024</option>
+                  <option>2023</option>
+                  <option>2022</option>
+                  <option>2021</option>
+                  <option>2020</option>
+                  <option>2019</option>
+                  <option>2018</option>
+                  <option>2017</option>
+                  <option>2016</option>
+                  <option>2015</option>
+                  <option>2014</option>
+                  <option>2013</option>
+                  <option>2012</option>
+                  <option>2011</option>
+                  <option>2010</option>
+                  <option>2009</option>
+                  <option>2008</option>
+                  <option>2007</option>
+                  <option>2006</option>
+                  <option>2005</option>
+                  <option>2004</option>
+                  <option>2003</option>
+                  <option>2002</option>
+                  <option>2001</option>
+                  <option>2000</option>
+                  <option>1999</option>
+                  <option>1998</option>
+                  <option>1997</option>
+                  <option>1996</option>
+                  <option>1995</option>
+                  <option>1994</option>
+                  <option>1993</option>
+                  <option>1992</option>
+                  <option>1991</option>
+                  <option>1990</option>
+                </select>
+          </div>
+          </div>
+            
+        </div>
+        <div class="form-control mt-6">
+          <button type="button" class="btn btn-primary bda" data-update-button>Update</button>
+        </div>
+      </form>
+
+      <script type="text/javascript" src="/js/employee/editEmployee.js"></script>
+</body>
+</html>
